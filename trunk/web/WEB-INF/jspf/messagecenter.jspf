@@ -1,0 +1,18 @@
+<c:if test="${not empty requestScope.messages or not empty requestScope.errors}">
+    <div id="message">
+        <c:choose>
+            <c:when test="${not empty requestScope.errors}">
+                <ol class="error">
+                    <c:forEach items="${requestScope.errors}" var="error">
+                        <li>${error}</li>
+                    </c:forEach>
+                </ol>
+            </c:when>
+            <c:when test="${not empty requestScope.messages}">
+                    <c:forEach items="${requestScope.messages}" var="message">
+                        <p>${message}</p>
+                    </c:forEach>
+            </c:when>
+        </c:choose>
+    </div>
+</c:if>

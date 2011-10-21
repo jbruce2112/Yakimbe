@@ -1,0 +1,136 @@
+/* reset v1.0 | meyerweb.com 20080212 */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
+{ margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+body { 	line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q {	quotes: none; }
+blockquote:before, 
+blockquote:after,
+q:before, q:after {	content: ''; content: none; }
+
+/* remember to define focus styles! */
+:focus { outline: 0; }
+
+/* remember to highlight inserts somehow! */
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {	border-collapse: collapse; border-spacing: 0; }
+
+
+/*
+	 www.yakimbe.com main styles | written by Jesse Woodruff
+	
+	Colors: 
+	off-white background:	#f9f7f2
+	green:		 			#527b38
+	orange highlight:		#e35200
+	light gray text:		#939598
+	dark gray links:		#4e504c
+	gray visited title:		#6f7072
+	green border:			#3d5b2a
+*/
+
+
+/* global styles----------------------------------------------------*/
+#page-wrapper						{ width: 76.8%; min-width:750px; max-width:1000px; position: relative; margin: 30px auto 30px auto; padding: 25px; background-color:#f9f7f2; border: 1px #3d5b2a solid;
+	 			  			 		  -moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; -moz-box-shadow:0 6px 12px #666; -webkit-box-shadow:0 6px 12px #666; box-shadow:0 6px 12px #666; overflow: hidden; }
+body								{ background: #6e6565 url(../images/background.jpg) fixed no-repeat; font: 10px lucida, arial, Sans-Serif; color:#939598; }
+h1, h2, h3, h4						{ color:#000; }	
+h2									{ font: 3em lucida, arial, Sans-Serif; color:#4e504c; }
+h3									{ font: 1.75em lucida, arial, Sans-Serif; }
+h4, label							{ font: 1.4em lucida, arial, Sans-Serif; font-weight:bold; color:#527b38; clear:both; }
+a img								{ border: 0; }
+a									{ color: #4e504c; }
+a:visited							{ color:#939598; }
+a:hover								{ color:#e35200; text-decoration:underline; }
+p									{ font: 1.1em lucida, arial, Sans-Serif; color: #939598; }
+hr									{ margin: 1em; color:#fff; }
+
+
+/*header---------------------------------------------------------------------*/
+#header								{ margin: -5px 0 25px 0; }
+.toplinks li						{ font-size: 1.1em; display: inline; float: right; padding: 0 12px; border-left: 1px solid; line-height:.1.2em; }
+.toplinks li.first					{ border-left:none; }
+#header #nav a						{ color:#f9f7f2; text-decoration:none; }
+#nav								{ display: block; position: relative; height: 24px; margin: 5px 0 0 0; width: 100%; background: #517a1b url(../images/nav-gradient.gif) repeat-x; overflow:hidden; }
+#header #nav li						{ display:inline; float:left; font: 1.45em lucida, arial, Sans-Serif; line-height:19px; color:#f9f7f2; padding: 2px 0 0 15px; }
+#header #nav li.last				{ display:inline; float:right; position:relative; padding-right:15px; }
+/*#header #nav a:hover				{ background: url(../images/pointer.gif); }
+.current-page						{ background: url(../images/pointer.gif) 12px 16px no-repeat;  }*/
+
+
+
+/*main-content----------------------------------------------------------------------*/
+#main-content						{ display:inline; position: relative; width:68%; min-width:400px; float: left; }
+#main-content ol					{ padding:0 0 0 20px; }
+#main-content .submission			{ display: inline; float:left; position:relative; width:100%; list-style-type: none; clear: both; padding:0 0 25px 0; }
+ul.submission-info li				{ font-size:1.1em; display:inline; float: left; padding: 0 6px; border-left: 1px solid; overflow:hidden; } 
+#main-content .first				{ border-left: none; }
+#main-content h3 a					{ color:#000; text-decoration: none; }
+#main-content h3 a:hover			{ text-decoration:underline; }
+#main-content h3 a:visited			{ color:#6f7072; }
+#main-content a:link.upvote,
+#main-content a:visited.upvote 		{ display: inline; position: relative; float:left; width:11px; height:12px; margin: 2px 0 0 -18px; /*26px and 41px*/
+  		  						  	  text-indent: -1000em; background: url(../images/arrows.gif) 0	0 no-repeat; }
+#main-content a:link.downvote, 
+#main-content a:visited.downvote 	{ display: inline; position: relative; float:left; width:11px; height:12px; margin: 17px 0 0 -18px;
+									  text-indent:-1000em; background: url(../images/arrows.gif) 0 -14px no-repeat; }
+#main-content a:hover.upvote		{ background-position: -13px 0; } 
+#main-content a:hover.downvote		{ background-position: -13px -14px; }
+
+
+
+/*comments---------------------------------------------------------------*/
+#comments							{ display:block; float: right; clear:both; padding: 0 0 0 20px; margin-top:-12px; }
+#comments li						{ font-size: 1.2em; color:#000; }
+#comments li.comment-meta			{ font-size:.9em; color:#939598; margin: 10px 0 3px -18px; padding:10px 0 0 0;} 
+#comments ul.comment-reply			{ display:block; padding:0 0 0 30px; border-left:1px dotted #b5b8bd; }
+#comments ul li.karma0				{ color:#939598; }
+#comments ul li.karma-1				{ color:#b5b8bd; }
+
+
+/*sidebar-----------------------------------------------------------------*/
+#sidebar							{ width:25%; position: relative; float: right; margin: 0 5px 0 0; padding: 15px; background-color:#fff;
+							  		  border:1px #bac3b4 solid; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; overflow:hidden; }
+#sidebar li							{ font-size: 1.3em; list-style-type:disc; margin: 0 0 0 15px; padding: 5px 0 0 0; }
+#sidebar a							{ color:#2d2e2f; text-decoration:none; }
+#sidebar a:hover					{ color:#000; text-decoration:underline; }
+
+
+
+/*footer-------------------------------------------------------------------*/
+#footer								{ display:block; position: relative; width:100%; clear:both; padding:60px 0 0 0; overflow:hidden; }
+#footer ul							{ display:block; text-align:center; padding: 6px 0 0 0; border-top:1px solid; }
+#footer li							{ display:inline; padding: 0 6px; line-height: 1em;  border-left: 1px solid; }
+#footer li.first					{ border-left:none; }
+
+
+
+/*form fields-------------------------------------------------------------*/
+label								{ display: block; position: relative; float:left; margin:12px 0 0 5px; line-height:1.5em; }
+input, textarea						{ -moz-border-radius: 6px; -webkit-border-radius:6px; border-radius:6px; }
+select								{ position:relative; float:left; height:1.7em; padding:2px 5px; margin:0 12px 0 0; font-size:1.7em; color:#4e504c; 
+									  border:1px #bac3b4 solid; -moz-border-radius: 6px; -webkit-border-radius:6px; border-radius:6px; background-color:#fff; color:#666;}
+.checkbox							{ display:block; position:relative; float:left; clear:both; }
+form								{ display:block; width:60%; }
+form#add-comment					{ width:90%; margin:0 0 0 20px; }
+form p								{ display:inline; position:relative; float:left; }
+#location							{ position:relative; float:left; clear:left; width:230px;}
+#year								{ position:relative; float:left; clear:left; width: 120px; }
+#email								{ margin:0; }
+#sex								{ position:relative; float:left; clear:left; width:120px; }
+.note-right							{ display:block; position:relative; float: right; font-size: 1em; margin:1.7em 0 0 0;  }
+.note-left							{ display:block; position:relative; float: left; font: 1em lucida, arial, Sans-Serif; color:#939598; font-weight:normal; margin:1.7em 0 0 .5em; }
+.textfield, .textarea	 			{ height:1.4em; width:98.5%; margin: 0 0 0 0; padding:2px 5px; font:1.7em lucida, arial, Sans-Serif; color:#4e504c; border:1px #bac3b4 solid; }
+.textarea							{ height:120px !important; width:100% !important; }
+.textfield:focus, .textarea:focus	{ -moz-box-shadow:0 0 4px #527b38; -webkit-box-shadow:0 0 4px #527b38;  }
+
+.submit								{ display:block; position:relative; float:right; font-size:1.3em; color:#f9f7f2; padding: 4px 8px; margin:10px 0 0 0; 
+									  background-color:#527b38; border:none; clear:both;}
+.submit:hover						{ background-color:#e35200; }
+label.error 						{ display: block; margin:0 0 0 0; color: red; font-weight: normal; }
+input.error 						{ border: 1px solid red; }

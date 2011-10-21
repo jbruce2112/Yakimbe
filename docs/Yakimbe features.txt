@@ -1,0 +1,23 @@
+Yakimbe.com feature list and notes
+
+Notes: 
+What is target audience? 
+	- MSU Students? 
+	- College Educated
+	- Up on current events
+
+
+Phase 1
+Main functionality
+
+Main page: 
+	- Main page displays all submission titles for selected locale organized by submission date, rating and activity
+	- Link to up vote submissions (no down vote?) 
+	- Link to comment on submitted content
+	- displays upvote rating
+	- displays number of comments
+	- displays page views ? (phase 2?)
+
+
+"New" page (or sort options?)
+	- Displays submission titles organized solely by date, newest first

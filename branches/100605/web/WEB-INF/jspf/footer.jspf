@@ -1,0 +1,43 @@
+<%@taglib prefix="yakimbeUtil" uri="YakimbeTags" %>
+        </div>
+        </div>
+            <div id="header">
+            <ul class="toplinks">
+                    <c:choose>
+                        <c:when test="${empty sessionScope.user}">
+                            <li><a href="<c:url value='/userlogin' />">Sign up</a> or <a href="<c:url value='/userlogin' />">login</a> </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li>Hello, <a href="<c:url value='/account' />">${sessionScope.user.friendlyDisplayName}</a></li>
+                            <li><a href="/Login?logout=true">logout</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                <li><a href="<c:url value='/about' />">about yakimbe</a></li>
+                <li><a href="<c:url value='/guidelines' />">guidelines</a></li>
+                <li class="first"><a href="http://blog.yakimbe.com">blog</a></li>
+            </ul>
+        <a href="<c:url value='/'/>"><img src="../../images/logo-small.gif" alt="Yakimbe: Where Lansing finds its news" /></a>
+    </div>
+            <div id="footer"> 
+                    <ul>
+                            <li class="first"><a href="<c:url value='/useragreement' />">User Agreement</a></li>
+                            <li><a href="<c:url value='/privacypolicy' />">Privacy Policy</a></li>
+                            <li><a href="<c:url value='/guidelines' />">Community Guidelines</a></li>
+                            <%--TODO this is only updated when THIS file is modified. How can update this at every check-in? --%>
+                            <li>SVN Revision: 211</li>
+                    </ul>
+            </div>
+
+    </body>
+    <!-- google analytics code-->
+     <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-12891767-1");
+    pageTracker._trackPageview();
+    } catch(err) {}
+    </script>   
+</html>

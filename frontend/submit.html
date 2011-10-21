@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+	
+	<title>Yakimbe | Submit an Item</title>
+</head>
+
+<body>
+	
+	
+	<div id="page-wrapper">
+		<div id="header">
+			<ul class="toplinks">
+				<li><a href="signup.html">sign up</a></li>
+				<li><a href="#">blog</a></li>
+				<li><a href="#">contact us</a></li>
+				<li class="first"><a href="#">submission guidelines</a></li>
+			</ul>
+			<img src="images/yakimbe_logo.gif" alt="Yakimbe: Where Lansing finds its news" />
+			<div id="nav">
+				<ul>
+					<li><a href="index-dummy.html">active</a></li>
+					<li><a href="#">new</a></li>
+					<li><a href="" class="current-page">submit</a></li>
+					<li><a href="#">about</a></li>
+					<li class="last"><a href="login.html">login</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="main-content">
+			<form id="submit-item" action="#">
+				<h2>Post an item</h2>
+				<span><label for="headline">headline</label>
+				<p class="note-right remaining">70 characters remaining</p>
+				<input type="text" id="headline" name="headline" class="countdown limit_70_ textfield" autofocus /><span>
+				<span><label for="subhead">subhead</label>
+				<p class="note-left">(optional)</p>
+				<p class="note-right remaining">70 characters remaining</p>
+				<input type="text" id="subhead" name="subhead" class="countdown limit_70_ textfield"/></span>
+				<label for="url">url</label>
+				<input type="url" id="url" name="url" class="url textfield" />
+				<p><input type="submit" value="Submit" class="submit" /></p>
+			</form>
+
+		</div>
+		<div id="sidebar">
+			<h4>new submissions</h4>
+			<ul>
+				<li><a href="#">Today show names Lansing as third best real estate market in the country</a></li>
+				<li><a href="#">Today show names Lansing as third best real estate market in the country</a></li>
+				<li><a href="#">Today show names Lansing as third best real estate market in the country</a></li>
+				<li><a href="#">Today show names Lansing as third best real estate market in the country</a></li>
+			</ul>
+			<hr />
+			<h4>recently viewed</h4>
+			<ul>
+				<li><a href="#">Today show names Lansing as third best real estate market in the country</a></li>
+				<li><a href="#">Today show names Lansing as third best real estate market in the country</a></li>
+				<li><a href="#">Today show names Lansing as third best real estate market in the country</a></li>
+				<li><a href="#">Today show names Lansing as third best real estate market in the country</a></li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			<ul>
+				<li class="first"><a href="#">This is the footer</a></li>
+				<li><a href="#">It will have copyright info</a></li>
+				<li><a href="#">And stuff like that</a></li>
+			</ul>	
+		</div>
+	</div>
+
+</body>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/yakimbe.js" type="text/javascript"></script>
+<script>
+ $(document).ready(function(){
+   $("#submit-item").validate({
+		  rules: {
+		    headline: {
+				required:true, 
+				minlength:2, 
+				maxlength:70
+			}, 
+			subhead: {
+				required:false, 
+				minlength:2,
+				maxlength:70 
+			}, 
+			url: {
+				required:true
+			}
+		}
+	});
+ });
+
+ var countdown = {
+     init: function() {
+         countdown.remaining = countdown.max - $(countdown.obj).val().length;
+         if (countdown.remaining > countdown.max) {
+             $(countdown.obj).val($(countdown.obj).val().substring(0,countdown.max));
+         }
+         $(countdown.obj).siblings(".remaining").html(countdown.remaining + " characters remaining");
+     },
+     max: null,
+     remaining: null,
+     obj: null
+ };
+ $(".countdown").each(function() {
+     $(this).focus(function() {
+         var c = $(this).attr("class");
+         countdown.max = parseInt(c.match(/limit_[0-9]{1,}_/)[0].match(/[0-9]{1,}/)[0]);
+         countdown.obj = this;
+         iCount = setInterval(countdown.init,1000);
+     }).blur(function() {
+         countdown.init();
+         clearInterval(iCount);
+     });
+ });
+
+ $(function(){
+   $('[autofocus=""]').autofocus();
+ });
+
+ </script>
+
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /Action
+Disallow: /gaset.jsp
+Disallow: /styleCatalog.jsp
+Allow: /

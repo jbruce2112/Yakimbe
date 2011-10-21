@@ -1,0 +1,20 @@
+To DO:
+
+- Phased feature list
+- High level logic diagram
+- build mysql database
+- front end prototypes
+- checkout p/m software for yakimbe
+
+
+
+Next week
+- High level logic diagram?
+- joint research on frameworks, design patterns
+- demo DB if operational
+- research indexing/database optimization
+
+
+
+GIT
+- setup .gitIgnore file

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="">
+  <ResourceLink global="jdbc/Yakimbe" name="jdbc/Yakimbe" type="javax.sql.DataSource"/>
+  <ResourceLink global="mail/Session" name="mail/Session" type="javax.mail.Session"/>
+</Context>

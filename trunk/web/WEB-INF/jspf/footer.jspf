@@ -1,0 +1,85 @@
+<%@taglib prefix="y" uri="YakimbeTags" %>
+        </div>
+        </div>
+            <div id="header">
+               <%-- Notification options --%>
+              <a href="<c:url value='/'/>"><img src="../../images/logo-small.gif" alt="Yakimbe: Where Lansing finds its news" /></a>
+              <c:choose>
+              <c:when test="${empty sessionScope.user}"> </c:when>
+              <c:otherwise>
+
+              <ul id="notify-menu">
+                    <li><a href="#" onmouseover="mopen('notify1')" onmouseout="mclosetime()">Notifications</a>
+                        <div id="notify1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                          <c:if test="${showNotifications and sessionScope.user.admin}">
+                            <%-- <c:if test="${commentNotif.numReplies gt 0}"> --%>
+                                    <h4>Replies to my comments</h4>
+
+                                    <c:set var="currentHeadlineGroup" value="" scope="page" />
+                                        <c:forEach items="${sessionScope.user.notifications.comment}" var="commentNotif" varStatus="i">
+                                            <li>
+                                                <a href="/submission/${commentNotif.itemCommentingOnId}?delNotif=comment#${commentNotif.itemId}">
+                                                    ${commentNotif.time}
+                                                </a> - ${commentNotif.numReplies} ${commentNotif.numReplies eq 1 ? " reply" : " replies"}
+                                            </li>
+                                        </c:forEach>
+
+                           <%-- <c:if test="${itemNotif.numReplies gt 0}"> --%>
+                                <h4>Replies to my submissions</h4>
+                                    <c:forEach items="${sessionScope.user.notifications.item}" var="itemNotif">
+                                        <li>
+                                            <a href="<c:url value='/submission/${itemNotif.itemId}?delNotif=item' />">
+                                                ${y:HeadlineFormatting(itemNotif.itemHeadline)}
+                                            </a> - ${itemNotif.numReplies} ${itemNotif.numReplies eq 1 ? " reply" : " replies"}
+                                        </li>
+                                    </c:forEach>
+                                <hr />
+                        </c:if>
+                      </div>
+                    </li>
+                    <li><a href="<c:url value='/account' />">My Account</a></li>
+                    <li class="last"><a href="#">Karma: 5,293</a></li>
+                </ul>
+                <div style="clear:both"></div>
+                
+              </c:otherwise>
+              </c:choose>
+                
+           <ul class="toplinks">
+                    <c:choose>
+                        <c:when test="${empty sessionScope.user}">
+                            <li><a href="<c:url value='/userlogin' />">Sign up</a> or <a href="<c:url value='/userlogin' />">login</a> </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="/Login?logout=true">logout</a></li>
+                        </c:otherwise>
+                    </c:choose>
+                <li><a href="<c:url value='/about' />">about yakimbe</a></li>
+                <li><a href="<c:url value='/guidelines' />">guidelines</a></li>
+                <li class="first"><a href="http://blog.yakimbe.com">blog</a></li>
+            </ul>
+
+    </div>
+            <div id="footer"> 
+                    <ul>
+                            <li class="first"><a href="<c:url value='/useragreement' />">User Agreement</a></li>
+                            <li><a href="<c:url value='/privacypolicy' />">Privacy Policy</a></li>
+                            <li><a href="<c:url value='/guidelines' />">Community Guidelines</a></li>
+                            <%--TODO this is only updated when THIS file is modified. How can update this at every check-in? --%>
+                            <li>R211</li>
+                    </ul>
+            </div>
+
+    </body>
+    <!-- google analytics code-->
+     <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker("UA-12891767-1");
+    pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee web-jsptaglibrary_2_0.xsd">
+  <tlib-version>1.0</tlib-version>
+  <short-name>yakimbetags</short-name>
+  <uri>YakimbeTags</uri>
+        <!-- EL Functions -->
+        <function>
+          <name>CommentsSetToList</name>
+          <function-class>com.yakimbe.web.DoEditCommentServlet</function-class>
+          <function-signature>java.util.List CommentsSetToList(java.util.Set)</function-signature>
+      </function>
+      <function>
+          <name>ToString</name>
+          <function-class>com.yakimbe.util.StringUtils</function-class>
+          <function-signature>java.lang.String ToString(java.lang.Object)</function-signature>
+      </function>
+      <function>
+          <name>EnsureProtocolExists</name>
+          <function-class>com.yakimbe.util.ValidateInput</function-class>
+          <function-signature>java.lang.String ensureProtocolExists(java.lang.String)</function-signature>
+      </function>
+      <function>
+          <name>SimpleDomainDisplay</name>
+          <function-class>com.yakimbe.util.StringUtils</function-class>
+          <function-signature>java.lang.String GetPrettyDomain(java.lang.String)</function-signature>
+      </function>
+      <function>
+          <name>GetDomain</name>
+          <function-class>com.yakimbe.util.StringUtils</function-class>
+          <function-signature>java.lang.String GetDomainName(java.lang.String)</function-signature>
+      </function>
+      <function>
+          <name>HeadlineFormatting</name>
+          <function-class>com.yakimbe.util.StringUtils</function-class>
+          <function-signature>java.lang.String HeadlineFormatting(java.lang.String)</function-signature>
+      </function>
+      <function>
+          <name>EscapeSmartQuotes</name>
+          <function-class>com.yakimbe.util.StringUtils</function-class>
+          <function-signature>java.lang.String EscapeSmartQuotes(java.lang.String)</function-signature>
+      </function>
+      <function>
+          <name>HTMLFormatting</name>
+          <function-class>com.yakimbe.util.StringUtils</function-class>
+          <function-signature>java.lang.String HTMLFormatting(java.lang.String)</function-signature>
+      </function>
+      <tag>
+          <name>Comments</name>
+          <tag-class>com.yakimbe.web.CommentTagHandler</tag-class>
+          <body-content>scriptless</body-content>
+          <attribute>
+              <name>tree</name>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>var</name>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+          <attribute>
+              <name>level</name>
+              <required>true</required>
+              <rtexprvalue>true</rtexprvalue>
+          </attribute>
+      </tag>
+</taglib>
